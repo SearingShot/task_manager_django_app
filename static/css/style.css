@@ -1,0 +1,399 @@
+/* Custom styles for Task Manager */
+:root {
+    --primary-color: #4a90e2;
+    --secondary-color: #f5f5f5;
+    --success-color: #2ecc71;
+    --danger-color: #e74c3c;
+    --text-color: #333;
+    --border-radius: 8px;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background-color: #f8f9fa;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Navbar Styling */
+.navbar {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%) !important;
+    padding: 1rem 0;
+}
+
+.navbar-brand {
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+
+/* Card Styling */
+.card {
+    border: none;
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.card-title {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+/* Button Styling */
+.btn {
+    border-radius: var(--border-radius);
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: #357abd;
+    border-color: #357abd;
+    transform: translateY(-1px);
+}
+
+.btn-danger {
+    background-color: var(--danger-color);
+    border-color: var(--danger-color);
+}
+
+.btn-danger:hover {
+    background-color: #c0392b;
+    border-color: #c0392b;
+}
+
+/* Task Status Badges */
+.badge {
+    padding: 0.5em 1em;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+/* Form Styling */
+.form-control {
+    border-radius: var(--border-radius);
+    border: 1px solid #ddd;
+    padding: 0.75rem;
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(74, 144, 226, 0.25);
+}
+
+/* Alert Styling */
+.alert {
+    border-radius: var(--border-radius);
+    border: none;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Empty State Styling */
+.empty-state {
+    text-align: center;
+    padding: 3rem 1rem;
+    color: #666;
+}
+
+.empty-state p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Task Grid Layout */
+.task-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+}
+
+/* Task Card Footer */
+.task-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 1rem;
+    }
+    
+    .task-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Task Completion Styling */
+.task-checkbox:checked ~ .card-title {
+    text-decoration: line-through;
+    color: #999;
+}
+
+.task-checkbox:checked ~ .card-text {
+    opacity: 0.7;
+}
+
+/* Animation Effects */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.card {
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* Authentication Pages Styling */
+.auth-card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+}
+
+.auth-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+}
+
+.auth-form .form-control {
+    height: calc(3.5rem + 2px);
+    padding: 1rem 0.75rem;
+}
+
+.auth-form .form-floating label {
+    padding: 1rem 0.75rem;
+}
+
+.auth-form .form-floating>.form-control:focus~label,
+.auth-form .form-floating>.form-control:not(:placeholder-shown)~label {
+    transform: scale(.85) translateY(-0.75rem) translateX(0.15rem);
+}
+
+.auth-links {
+    font-size: 0.9rem;
+}
+
+.auth-links a {
+    color: var(--primary-color);
+    transition: color 0.2s ease;
+}
+
+.auth-links a:hover {
+    color: #357abd;
+}
+
+/* Social Auth Buttons */
+.btn-google {
+    color: #fff;
+    background-color: #ea4335;
+    border-color: #ea4335;
+    transition: all 0.2s ease;
+}
+
+.btn-google:hover {
+    color: #fff;
+    background-color: #d33426;
+    border-color: #d33426;
+    transform: translateY(-1px);
+}
+
+/* Divider */
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 1.5rem 0;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.divider span {
+    padding: 0 1rem;
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+
+/* Form Validation Styling */
+.auth-form .form-control.is-invalid {
+    border-color: var(--danger-color);
+    box-shadow: none;
+}
+
+.auth-form .invalid-feedback {
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+}
+
+/* Alert Styling in Auth Forms */
+.auth-form .alert {
+    border-radius: 10px;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Password Strength Indicator */
+.password-strength {
+    height: 4px;
+    margin-top: 0.5rem;
+    border-radius: 2px;
+    background-color: #dee2e6;
+    overflow: hidden;
+}
+
+.password-strength-bar {
+    height: 100%;
+    width: 0;
+    transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 576px) {
+    .auth-card {
+        margin: 1rem;
+        border-radius: 10px;
+    }
+    
+    .auth-title {
+        font-size: 1.75rem;
+    }
+}
+
+/* Auth Icon Styling */
+.auth-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(74, 144, 226, 0.1);
+    border-radius: 50%;
+    margin-bottom: 1.5rem;
+}
+
+.auth-icon i {
+    color: var(--primary-color);
+}
+
+.auth-icon.success {
+    background: rgba(46, 204, 113, 0.1);
+}
+
+.auth-icon.success i {
+    color: var(--success-color);
+}
+
+.auth-icon.error {
+    background: rgba(231, 76, 60, 0.1);
+}
+
+.auth-icon.error i {
+    color: var(--danger-color);
+}
+
+/* Password Reset Specific Styles */
+.password-reset-alert {
+    border-radius: 10px;
+    padding: 1.25rem;
+    margin-bottom: 2rem;
+    border: none;
+}
+
+.password-reset-alert i {
+    font-size: 1.1rem;
+}
+
+.password-requirements {
+    text-align: left;
+    margin-top: 0.5rem;
+    padding-left: 1rem;
+    font-size: 0.85rem;
+    color: #6c757d;
+}
+
+.password-requirements li {
+    margin-bottom: 0.25rem;
+}
+
+.password-requirements i {
+    margin-right: 0.5rem;
+    font-size: 0.8rem;
+}
+
+/* Password Strength Meter */
+.password-strength-meter {
+    margin: 1rem 0;
+    height: 4px;
+    background-color: #eee;
+    border-radius: 2px;
+    position: relative;
+}
+
+.password-strength-meter-fill {
+    height: 100%;
+    border-radius: 2px;
+    transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.strength-weak {
+    background-color: var(--danger-color);
+    width: 25%;
+}
+
+.strength-fair {
+    background-color: #f1c40f;
+    width: 50%;
+}
+
+.strength-good {
+    background-color: #3498db;
+    width: 75%;
+}
+
+.strength-strong {
+    background-color: var(--success-color);
+    width: 100%;
+}
+
+/* Animation for Success/Error Icons */
+@keyframes iconPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.auth-icon i {
+    animation: iconPulse 2s infinite;
+}
